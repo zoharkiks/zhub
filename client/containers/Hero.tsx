@@ -4,7 +4,7 @@ import { images } from "../constants";
 
 const Hero = () => {
   return (
-    <div className=''>I'am a Hero Section
+    <div className='text-gray'><h1>Discover New Articles</h1>
     </div>
   )
 }
