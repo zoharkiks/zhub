@@ -45,7 +45,7 @@ const Navbar = () => {
 
       {/* Mobile Nav */}
       {open ? (
-        <div className="absolute  top-0 left-0 right-0 z-10 flex h-screen w-full flex-col  justify-between bg-gray/40  px-6 py-14 backdrop-blur-[10px] md:hidden">
+        <div className="absolute  top-0 left-0 right-0 z-10 flex h-screen w-full flex-col  justify-between bg-darkGray/40  px-6 py-14 backdrop-blur-[10px] md:hidden">
           <div className="flex justify-end">
             <Icon
               onClick={() => setOpen(!open)}
