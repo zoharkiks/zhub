@@ -3,8 +3,8 @@ import { images } from '../constants'
 
 const TopArticle = () => {
   return (
-    <div className="w-full flex flex-col items-center rounded-2xl  bg-darkGray py-20 font-jakarta px-10 text-center space-y-8">
-      <div className="flex w-max items-center justify-between space-x-3 rounded-full bg-white px-3 py-2">
+    <div className="w-full flex flex-col items-center rounded-2xl  bg-white py-20 font-jakarta px-10 text-center space-y-8 mt-6">
+      <div className="flex w-max items-center justify-between space-x-3 rounded-full drop-shadow-lg bg-white px-3 py-2">
         <img
           className="h-12 w-12 rounded-full  "
           src={images.profile.src}

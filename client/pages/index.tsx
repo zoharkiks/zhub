@@ -8,9 +8,9 @@ import { Navbar } from "../components";
 
 const Home: NextPage = () => {
   return (
-    <div className="bg-black  px-6 py-10  md:px-16">
+    <div className="bg-black  px-6 py-10  md:px-24">
       <Head>
-        <title>Your App Name</title>
+        <title>ZHub</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

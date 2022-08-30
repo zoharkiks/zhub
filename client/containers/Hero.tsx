@@ -6,7 +6,7 @@ const Hero = () => {
     <div className="mt-20 flex-col font-jakarta text-white  px-6 space-y-10 lg:px-16 border-t border-gray ">
 
       <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center ">
-         <h1 className="text-3xl font-bold mt-14 md:text-[2.25rem] lg:text-[3rem]">Discover New Articles Here</h1>
+         <h1 className="text-3xl font-bold mt-14 md:mt-32 md:text-[2.25rem] lg:text-[3rem]">Discover New Articles Here</h1>
 
       <div className="flex space-x-4 mt-6">
         <div className="flex items-center rounded-full bg-darkGray p-3">
@@ -28,12 +28,12 @@ const Hero = () => {
 
       <form className="relative flex flex-col md:flex-row md:items-center   " action="">
         <input
-          className=" w-max md:w-[35%] rounded-full  border-none bg-darkGray p-3 pl-10 text-sm placeholder:text-sm "
+          className=" w-max md:w-[35%] rounded-full justify-center  border-none bg-darkGray p-3 pl-10 text-sm placeholder:text-sm "
           type="text"
           placeholder="Search..."
         />
         <Icon className="absolute left-4 top-4 md:top-5" icon="carbon:search" />
-        <div className="flex items-start justify-center text-gray font-medium mt-5 md:ml-12">
+        <div className="flex items-start text-gray font-medium mt-5 md:ml-12">
           <span className="hover:bg-blue hover:text-white transition-all md:px-10 px-4 py-2 cursor-pointer rounded-full">All</span>
           <span className="hover:bg-blue hover:text-white transition-all md:px-10 px-4 py-2 cursor-pointer rounded-full">Sports</span>
           <span className="hover:bg-blue hover:text-white transition-all md:px-10 px-4 py-2 cursor-pointer rounded-full">Tech</span>
