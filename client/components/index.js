@@ -2,5 +2,6 @@
 
 import  Navbar  from "./Navbar"
 import  Button  from "./Button"
+import  TopArticle  from "./TopArticle"
 
-export {Navbar,Button}
+export {Navbar,Button,TopArticle}
