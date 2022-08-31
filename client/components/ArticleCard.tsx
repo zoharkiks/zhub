@@ -2,8 +2,11 @@ import React from "react";
 import { images } from "../constants";
 import { Icon } from "@iconify/react";
 import Button from "./Button";
+import Router, { useRouter } from "next/router";
 
 const ArticleCard = () => {
+
+  const router = useRouter()
   return (
     <div className="flex w-[85%] flex-col  space-y-6 font-jakarta  text-white ">
       <div
@@ -48,6 +51,7 @@ const ArticleCard = () => {
       </div>
 
       <Button
+onClick={()=>router.push('/details')}
         text="Read More"
         extra=" border-2 border-gray justify-center text-gray hover:bg-blue hover:text-white hover:border-none transition-all"
       />

@@ -8,7 +8,8 @@
   "dependencies": {
     "next": "latest",
     "react": "18.1.0",
-    "react-dom": "18.1.0"
+    "react-dom": "18.1.0",
+    "react-share": "^4.4.0"
   },
   "devDependencies": {
     "@iconify/react": "^3.2.2",

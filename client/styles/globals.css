@@ -3,13 +3,8 @@
 @tailwind utilities;
 
 
-/* For Custom fonts */
-/* @font-face {
-    font-family: "WorldwideHeadline";
-    src: url("../public/fonts/WorldwideHeadline.ttf");
-  } */
+@layer components {
+  .full-bleed {
+    margin-inline: calc((100% - 100vw) / 2.2);
 
-/* @font-face {
-    font-family: "WorldwideHeadline";
-    src: url("../public/fonts/WorldwideHeadline.ttf");
-  } */
+  }}
