@@ -3,7 +3,7 @@ import { images } from "../constants";
 import { Icon } from "@iconify/react";
 const Hero = () => {
   return (
-    <div className="mt-20 flex-col font-jakarta text-white  px-6 space-y-10 lg:px-16 border-t border-gray ">
+    <div className=" flex-col font-jakarta text-white  px-6 space-y-10 lg:px-16 border-t border-gray ">
 
       <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center mt-10 md:mt-16 ">
          <h1 className="text-3xl font-bold  md:text-[2.25rem] lg:text-[3rem]">Discover New Articles Here</h1>

@@ -7,7 +7,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="flex items-center justify-between font-jakarta ">
+    <div className="flex items-center justify-between font-jakarta bg-black px-6  py-10 md:px-24">
       <div className="flex border-r-2 border-gray">
         <img className="h-14" src={images.logo.src} alt="logo" />
       </div>

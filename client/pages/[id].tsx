@@ -17,7 +17,6 @@ import {
 const Details = () => {
   return (
     <div className="  bg-black px-6  py-10 font-jakarta md:px-24 ">
-      <Navbar />
       <div className="full-bleed mt-10 flex bg-blue py-8 px-20 text-center text-white ">
         <div className=" grid-cols-1 md:grid-cols-2 grid w-full place-items-center space-y-10">
           <div className="flex flex-col items-center justify-center space-y-4 w-[75%] ">
