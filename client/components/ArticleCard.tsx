@@ -4,7 +4,7 @@ import { Icon } from "@iconify/react";
 import Button from "./Button";
 import Router, { useRouter } from "next/router";
 
-const ArticleCard = () => {
+const ArticleCard = ({post}) => {
 
   const router = useRouter()
   return (
@@ -30,7 +30,7 @@ const ArticleCard = () => {
         </div>
       </div>
       <h2 className="text-2xl font-bold leading-10 ">
-        Soon Robots Will Kill You And Eat But Why?
+        {post.title}
       </h2>
       <p className="text-base font-medium leading-8 text-gray">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae facere
