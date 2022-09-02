@@ -19,7 +19,7 @@ export default {
       },
     },
     {
-      name: "authour",
+      name: "author",
       type: "reference",
       title: "Author",
       to: {

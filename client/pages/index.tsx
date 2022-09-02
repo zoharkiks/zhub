@@ -28,7 +28,17 @@ const Home: NextPage = ({ posts }) => {
 
 export async function getStaticProps ({ preview = false }) {
   const client = getClient()
-  const query = groq`*[_type == "post"] | order(publishedAt desc)`
+  const query = groq`*[_type == "post" ] | order(publishedAt desc)
+  {
+    _id,
+    "username": author->username,
+    "categories":categories[]->{_id,title},
+    title,
+    "mainImage": image.asset,
+   "authorImage":author->avatar.asset,
+    publishedAt
+  }
+  `
   const posts = await client.fetch(query)
   return {
     props: {
