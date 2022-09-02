@@ -19,7 +19,7 @@ const Home: NextPage = ({ posts,categories }) => {
 
       {/* Website Sections */}
       <Hero />
-      <TopArticles />
+      <TopArticles posts={posts} />
       <Articles posts={posts} />
       <Footer />
     </div>
@@ -36,7 +36,9 @@ export async function getStaticProps ({ preview = false }) {
     title,
     "mainImage": image.asset,
    "authorImage":author->avatar.asset,
-    publishedAt
+    publishedAt,
+    "slug":slug.current,
+    body
   }
   `
   // const categoryQuery = groq`*[_type == "category"] order(publishedAt desc)

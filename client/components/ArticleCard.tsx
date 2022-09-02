@@ -14,7 +14,7 @@ const ArticleCard = ({post}) => {
         style={{
           backgroundImage: `url(${urlFor(post.mainImage)})`,
         }}
-        className="flex h-[30rem]  flex-col items-center justify-between rounded-2xl bg-contain bg-no-repeat p-4"
+        className="flex h-[30rem]  flex-col items-center justify-between rounded-2xl bg-cover bg-no-repeat p-4"
       >
         <div className="flex w-full justify-end">
           <div className="flex rounded-full bg-[#fedfd5] p-3">
@@ -23,7 +23,7 @@ const ArticleCard = ({post}) => {
         </div>
         <div className="flex w-max items-center justify-between space-x-3 rounded-full bg-white px-4  py-2 drop-shadow-2xl">
           <img
-            className="h-12 w-12 rounded-full  "
+            className="h-12 w-12 rounded-full object-cover object-top  "
             src={urlFor(post?.authorImage)}
             alt={post.username +'avatar'}
           />
@@ -52,7 +52,7 @@ const ArticleCard = ({post}) => {
       </div>
 
       <Button
-onClick={()=>router.push('/details')}
+onClick={()=>router.push(`/${post.slug}`)}
         text="Read More"
         extra=" border-2 border-gray justify-center text-gray hover:bg-blue hover:text-white hover:border-none transition-all"
       />

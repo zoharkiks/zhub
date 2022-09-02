@@ -1,7 +1,9 @@
 import React from "react";
-import { images } from "../constants";
 import { Icon } from "@iconify/react";
+
 const Hero = () => {
+
+  
   return (
     <div className=" flex-col font-jakarta text-white  px-6 space-y-10 lg:px-16 border-t border-gray ">
 
@@ -26,7 +28,8 @@ const Hero = () => {
         Without Any Problems.
       </p>
 
-      <form className="relative flex flex-col md:flex-row md:items-center   " action="">
+{/* Search Bar */}
+      {/* <form className="relative flex flex-col md:flex-row md:items-center   " action="">
         <input
           className=" w-max md:w-[35%] rounded-full justify-center  border-none bg-darkGray p-3 pl-10 text-sm placeholder:text-sm "
           type="text"
@@ -39,7 +42,7 @@ const Hero = () => {
           <span className="hover:bg-blue hover:text-white transition-all md:px-10 px-4 py-2 cursor-pointer rounded-full">Tech</span>
           <span className="hover:bg-blue hover:text-white transition-all md:px-10 px-4 py-2 cursor-pointer rounded-full">Music</span>
         </div>
-      </form>
+      </form> */}
     </div>
   );
 };

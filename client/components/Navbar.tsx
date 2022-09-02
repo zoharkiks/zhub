@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { images } from "../constants";
 import { Icon } from "@iconify/react";
 import { Button } from "../components";
+import Link from "next/link";
+
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -19,7 +21,7 @@ const Navbar = () => {
       {/* Desktop Nav */}
       <div className="hidden justify-center text-sm text-white md:flex   ">
         <ul className="flex space-x-4">
-          <a href="">Home</a>
+          <Link href="/">Home</Link>
           <a href="">About Me</a>
         </ul>
       </div>
