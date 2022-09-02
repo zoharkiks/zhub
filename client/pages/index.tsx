@@ -8,7 +8,7 @@ import { Articles, Footer, Hero, TopArticles } from "../containers";
 // import components
 import { Navbar } from "../components";
 
-const Home: NextPage = ({ posts }) => {
+const Home: NextPage = ({ posts,categories }) => {
 
   return (
     <div className="bg-black  px-6 py-10  md:px-24">
@@ -28,7 +28,7 @@ const Home: NextPage = ({ posts }) => {
 
 export async function getStaticProps ({ preview = false }) {
   const client = getClient()
-  const query = groq`*[_type == "post" ] | order(publishedAt desc)
+  const postQuery = groq`*[_type == "post" ] | order(publishedAt desc)
   {
     _id,
     "username": author->username,
@@ -39,10 +39,18 @@ export async function getStaticProps ({ preview = false }) {
     publishedAt
   }
   `
-  const posts = await client.fetch(query)
+  // const categoryQuery = groq`*[_type == "category"] order(publishedAt desc)
+  // {
+  //   categories[]
+
+  // }  `
+  
+  const posts = await client.fetch(postQuery)
+  // const categories = await client.fetch(categoryQuery)
   return {
     props: {
       posts,
+      // categories
     },
   };
 }
