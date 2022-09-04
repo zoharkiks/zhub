@@ -4,12 +4,11 @@ import { Icon } from "@iconify/react";
 import { Button } from "../components";
 import Link from "next/link";
 
-
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="flex items-center justify-between font-jakarta bg-black px-6  py-10 md:px-24">
+    <div className="flex items-center justify-between bg-black px-6 py-10  font-jakarta md:px-24">
       <div className="flex border-r-2 border-gray">
         <img className="h-14" src={images.logo.src} alt="logo" />
       </div>
@@ -22,7 +21,13 @@ const Navbar = () => {
       <div className="hidden justify-center text-sm text-white md:flex   ">
         <ul className="flex space-x-4">
           <Link href="/">Home</Link>
-          <a href="">About Me</a>
+          <a
+            href="https://zoharwilliams.vercel.app/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            About Me
+          </a>
         </ul>
       </div>
 
@@ -37,11 +42,13 @@ const Navbar = () => {
           icon="akar-icons:bell"
         />
 
-        <Button
-          text="Contact Me"
-          extra="bg-white !text-xs "
-          icon="charm:phone"
-        />
+        <a href="tel:+918894440845">
+          <Button
+            text="Contact Me"
+            extra="bg-white !text-xs "
+            icon="charm:phone"
+          />
+        </a>
       </div>
       {/*  */}
 
@@ -58,8 +65,16 @@ const Navbar = () => {
 
           <div className="flex justify-center text-center text-2xl text-white ">
             <ul className="flex flex-col space-y-4">
-              <a href="">Home</a>
-              <a href="">About Me</a>
+              <Link href="/">
+                <span className="cursor-pointer" onClick={() => setOpen(!open)}>Home</span>
+              </Link>
+              <a
+                href="https://zoharwilliams.vercel.app/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                About Me
+              </a>
             </ul>
           </div>
 
@@ -69,7 +84,13 @@ const Navbar = () => {
               src={images.profile.src}
               alt=""
             />
-            <Button text="Contact Me" extra="bg-white" icon="charm:phone" />
+            <a href="tel:+918894440845">
+          <Button
+            text="Contact Me"
+            extra="bg-white !text-xs "
+            icon="charm:phone"
+          />
+        </a>
             <Icon className="h-6 w-6 text-white" icon="akar-icons:bell" />
           </div>
         </div>

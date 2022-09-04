@@ -1,11 +1,33 @@
 import React from "react";
 import { urlFor } from "../lib/sanity";
 import  { useRouter } from "next/router";
+import { PortableText } from "@portabletext/react";
+
+const PostComponents = {
+  types: {
+    image: ({ value }) => {
+      return (
+        <img className="mt-10" alt={value.alt || " "} src={urlFor(value)} />
+      );
+    },
+  },
+  block: {
+    h3: ({ children }) => (
+      <h1 className="my-8 w-full text-left font-jakarta text-3xl">
+        {children}
+      </h1>
+    ),
+    normal: ({ children }) => (
+      <p className="mt-4 text-lg leading-8">{children}</p>
+    ),
+  },
+};
+
 
 const TopArticle = ({ post }) => {
   console.log(post[0].slug);
 
-  const { authorImage, username, title, mainImage, slug } = post[0];
+  const { authorImage, username, title, mainImage, slug,body } = post[0];
   const router = useRouter();
 
   return (

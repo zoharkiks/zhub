@@ -1,7 +1,5 @@
 import { Icon } from "@iconify/react";
 import React from "react";
-import { Navbar } from "../components";
-import { images } from "../constants";
 
 import groq from "groq";
 import { PortableText } from "@portabletext/react";
@@ -23,13 +21,7 @@ const PostComponents = {
   types: {
     image: ({ value }) => {
       return (
-      
-          <img
-            className="mt-10"
-            alt={value.alt || " "}
-            src={urlFor(value)}
-          />
-      
+        <img className="mt-10" alt={value.alt || " "} src={urlFor(value)} />
       );
     },
   },
@@ -39,7 +31,9 @@ const PostComponents = {
         {children}
       </h1>
     ),
-    normal: ({ children }) => <p className="text-lg leading-8 mt-10">{children}</p>,
+    normal: ({ children }) => (
+      <p className="mt-4 text-lg leading-8">{children}</p>
+    ),
   },
 };
 
@@ -67,7 +61,7 @@ const Details = ({ post }) => {
           </div>
 
           <div className="flex flex-col items-center  space-y-3 md:h-full md:space-y-8">
-            <div className="flex w-max items-center justify-between space-x-3 rounded-full bg-white px-4 py-1 drop-shadow-2xl">
+            <div className="flex w-max items-center justify-between space-x-3 rounded-full bg-white px-4 py-2 drop-shadow-2xl">
               <img
                 className="h-10 w-10 rounded-full object-cover object-top  "
                 src={urlFor(post?.authorImage)}
@@ -83,55 +77,43 @@ const Details = ({ post }) => {
                 {new Date(post?.publishedAt).toDateString()}
               </span>
             </div>
+
+            <div className="mt-10 flex space-x-3">
+              <EmailShareButton url={`https://localhost:1337alllArticles/$}`}>
+                <EmailIcon size={32} round={true} />
+              </EmailShareButton>
+
+              <TwitterShareButton url={`https://localhost:1337alllArticles/$}`}>
+                <TwitterIcon size={32} round={true} />
+              </TwitterShareButton>
+
+              <FacebookShareButton
+                url={`https://localhost:1337alllArticles/$}`}
+              >
+                <FacebookIcon size={32} round={true} />
+              </FacebookShareButton>
+
+              <WhatsappShareButton
+                url={`https://localhost:1337alllArticles/$}`}
+              >
+                <WhatsappIcon size={32} round={true} />
+              </WhatsappShareButton>
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="mt-10 flex flex-col items-center justify-center  text-white">
-        <div className="flex h-[24rem] w-full justify-center">
-          <img
-            className=" rounded-xl object-contain"
-            src={urlFor(post?.mainImage)}
-            alt=""
-          />
+      <div className="mt-10 flex grid-cols-3 flex-col items-center justify-center text-white  lg:grid">
+        <div className="col-span-2 flex flex-col">
+          <div className="flex  w-full justify-center  lg:justify-start">
+            <img
+              className=" h-[24rem] w-max rounded-xl object-contain"
+              src={urlFor(post?.mainImage)}
+              alt=""
+            />
+          </div>
+          <PortableText value={post?.body} components={PostComponents} />
         </div>
-        {/* <p className=" mt-6 text-justify leading-7 ">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
-          voluptatem mollitia laborum minima officia nam sunt delectus vitae,
-          sapiente inventore iure repellat, quas nisi tempore omnis officiis
-          aliquid eos totam. Lorem ipsum dolor sit amet consectetur adipisicing
-          elit. Blanditiis voluptatem mollitia laborum minima officia nam sunt
-          delectus vitae, sapiente inventore iure repellat, quas nisi tempore
-          omnis officiis aliquid eos totam. Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Blanditiis voluptatem mollitia laborum
-          minima officia nam sunt delectus vitae, sapiente inventore iure
-          repellat, quas nisi tempore omnis officiis aliquid eos totam. Lorem
-          ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
-          voluptatem mollitia laborum minima officia nam sunt delectus vitae,
-          sapiente inventore iure repellat, quas nisi tempore omnis officiis
-          aliquid eos totam.
-        </p> */}
-
-        <PortableText value={post?.body} components={PostComponents} />
-
-        <div className="mt-10 flex space-x-3">
-          <EmailShareButton url={`https://localhost:1337alllArticles/$}`}>
-            <EmailIcon size={32} round={true} />
-          </EmailShareButton>
-
-          <TwitterShareButton url={`https://localhost:1337alllArticles/$}`}>
-            <TwitterIcon size={32} round={true} />
-          </TwitterShareButton>
-
-          <FacebookShareButton url={`https://localhost:1337alllArticles/$}`}>
-            <FacebookIcon size={32} round={true} />
-          </FacebookShareButton>
-
-          <WhatsappShareButton url={`https://localhost:1337alllArticles/$}`}>
-            <WhatsappIcon size={32} round={true} />
-          </WhatsappShareButton>
-        </div>
-        {/* <h2 className="mt-10 text-xl font-bold">Related Articles</h2> */}
       </div>
     </div>
   );
