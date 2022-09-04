@@ -18,7 +18,7 @@ const Navbar = () => {
         icon="typcn:th-menu-outline"
       />
       {/* Desktop Nav */}
-      <div className="hidden justify-center text-sm text-white md:flex   ">
+      <div className="hidden justify-center text-lg text-white md:flex   ">
         <ul className="flex space-x-4">
           <Link href="/">Home</Link>
           <a
@@ -71,6 +71,7 @@ const Navbar = () => {
               <a
                 href="https://zoharwilliams.vercel.app/"
                 target="_blank"
+                onClick={() => setOpen(!open)}
                 rel="noreferrer"
               >
                 About Me

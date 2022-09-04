@@ -1,33 +1,34 @@
 import React from "react";
 import { urlFor } from "../lib/sanity";
-import  { useRouter } from "next/router";
+import { useRouter } from "next/router";
 import { PortableText } from "@portabletext/react";
 
 const PostComponents = {
   types: {
     image: ({ value }) => {
       return (
-        <img className="mt-10" alt={value.alt || " "} src={urlFor(value)} />
+        <img
+          className="mt-10 hidden "
+          alt={value.alt || " "}
+          src={urlFor(value)}
+        />
       );
     },
   },
   block: {
-    h3: ({ children }) => (
-      <h1 className="my-8 w-full text-left font-jakarta text-3xl">
-        {children}
-      </h1>
-    ),
+    h3: ({ children }) => <h1 className="hidden">{children}</h1>,
     normal: ({ children }) => (
-      <p className="mt-4 text-lg leading-8">{children}</p>
+      <p className="mt-4 text-center w-[20rem] md:w-[30rem] lg:w-[40rem]  truncate text-lg leading-8 text-white">
+        {children}
+      </p>
     ),
   },
 };
 
-
 const TopArticle = ({ post }) => {
   console.log(post[0].slug);
 
-  const { authorImage, username, title, mainImage, slug,body } = post[0];
+  const { authorImage, username, title, mainImage, slug, body } = post[0];
   const router = useRouter();
 
   return (
@@ -51,19 +52,18 @@ const TopArticle = ({ post }) => {
         {title}
       </h2>
 
-      <p className="w-[75%]  text-gray lg:text-lg">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus ab
-        moleiis, veniam consequatur reiciendis.
+      <div className="flex  flex-col justify-center items-center">
+        <PortableText value={body} components={PostComponents} />
+
         <span
           onClick={() => router.push(`/${slug}`)}
-          className="font-bold text-blue underline underline-offset-4 cursor-pointer "
+          className="cursor-pointer font-bold text-blue underline underline-offset-4 "
         >
           Read More.
         </span>
-      </p>
+      </div>
     </div>
   );
 };
-
 
 export default TopArticle;

@@ -27,7 +27,7 @@ const PostComponents = {
   },
   block: {
     h3: ({ children }) => (
-      <h1 className="my-8 w-full text-left font-jakarta text-3xl">
+      <h1 className="my-8 w-full text-left font-jakarta text-3xl font-bold">
         {children}
       </h1>
     ),
