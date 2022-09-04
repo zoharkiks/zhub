@@ -1,6 +1,6 @@
 export const config = {
   dataset: "production",
-  projectId: "406vd58s",
+  projectId: process.env.NEXT_PROJECT_ID,
   apiVersion: "2022-09-01",
   useCdn: "production",
 };
