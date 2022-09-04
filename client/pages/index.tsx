@@ -6,12 +6,11 @@ import groq from "groq";
 // import containers
 import { Articles, Footer, Hero, TopArticles } from "../containers";
 // import components
-import { Navbar } from "../components";
 
-const Home: NextPage = ({ posts,categories }) => {
+const Home: NextPage = ({ posts }) => {
 
   return (
-    <div className="bg-black  px-6 py-10  md:px-24">
+    <div className="bg-black  px-6 pt-10  md:px-24">
       <Head>
         <title>ZHub</title>
         <link rel="icon" href="/favicon.ico" />

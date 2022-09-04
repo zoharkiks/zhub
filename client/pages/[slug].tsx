@@ -16,6 +16,7 @@ import {
   EmailShareButton,
   EmailIcon,
 } from "react-share";
+import { Footer } from "../containers";
 
 const PostComponents = {
   types: {
@@ -41,7 +42,7 @@ const Details = ({ post }) => {
   console.log(post);
 
   return (
-    <div className="  bg-black px-6  py-10 font-jakarta md:px-24 ">
+    <div className="  bg-black px-6  pt-10 font-jakarta md:px-24 ">
       <div className="full-bleed mt-10 flex bg-blue py-8 px-20 text-center text-white ">
         <div className=" grid w-full grid-cols-1 place-items-center space-y-10 md:grid-cols-2">
           <div className="flex w-[75%] flex-col items-center justify-center space-y-4 ">
@@ -115,6 +116,8 @@ const Details = ({ post }) => {
           <PortableText value={post?.body} components={PostComponents} />
         </div>
       </div>
+      <Footer />
+
     </div>
   );
 };
