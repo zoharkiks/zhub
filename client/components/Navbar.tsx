@@ -47,6 +47,7 @@ const Navbar = () => {
             text="Contact Me"
             extra="bg-white !text-xs "
             icon="charm:phone"
+            onClick={null}
           />
         </a>
       </div>
@@ -90,6 +91,7 @@ const Navbar = () => {
             text="Contact Me"
             extra="bg-white !text-xs "
             icon="charm:phone"
+            onClick={null}
           />
         </a>
             <Icon className="h-6 w-6 text-white" icon="akar-icons:bell" />

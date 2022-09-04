@@ -5,7 +5,7 @@ import { PortableText } from "@portabletext/react";
 
 const PostComponents = {
   types: {
-    image: ({ value }) => {
+    image: ({ value } ) => {
       return (
         <img
           className="mt-10 hidden "
