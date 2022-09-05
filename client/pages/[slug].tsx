@@ -19,13 +19,13 @@ import {
 import { Footer } from "../containers";
 
 const PostComponents = {
-  types: {
-    image: ({ value }) => {
-      return (
-        <img className="mt-10" alt={value.alt || " "} src={urlFor(value)} />
-      );
-    },
-  },
+  // types: {
+  //   image: ({ value }) => {
+  //     return (
+  //       <img className="mt-10" alt={value.alt || " "} src={urlFor(value)} />
+  //     );
+  //   },
+  // },
   block: {
     h3: ({ children }) => (
       <h1 className="my-8 w-full text-left font-jakarta text-3xl font-bold">
@@ -39,8 +39,6 @@ const PostComponents = {
 };
 
 const Details = ({ post }) => {
-  console.log(post);
-
   return (
     <div className="  bg-black px-6  pt-10 font-jakarta md:px-24 ">
       <div className="full-bleed mt-10 flex bg-blue py-8 px-20 text-center text-white ">
@@ -117,7 +115,6 @@ const Details = ({ post }) => {
         </div>
       </div>
       <Footer />
-
     </div>
   );
 };
