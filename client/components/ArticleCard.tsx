@@ -1,9 +1,23 @@
 import React from "react";
-import { images } from "../constants";
 import { Icon } from "@iconify/react";
 import Button from "./Button";
-import Router, { useRouter } from "next/router";
-import { urlFor } from "../lib/sanity";
+import { useRouter } from "next/router";
+import { PortableText } from "@portabletext/react";
+
+
+
+// Portable Text
+const PostComponents = {
+
+  block: {
+    h3: ({ children }) => <h1 className="hidden">{children}</h1>,
+    normal: ({ children }) => (
+      <p className="mt-4  truncate text-lg leading-8 text-white">
+        {children}
+      </p>
+    ),
+  },
+};
 
 const ArticleCard = ({ post }) => {
   
@@ -31,10 +45,9 @@ const ArticleCard = ({ post }) => {
         </div>
       </div>
       <h2 className="text-2xl font-bold leading-10 ">{post.title}</h2>
-      <p className="text-base font-medium leading-8 text-gray">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae facere
-        deleniti dolorum aut facilis?
-      </p>
+      
+      <PortableText value={post?.body} components={PostComponents} />
+
 
       <div className="!mb-4 flex space-x-10 border-t-2 border-gray pt-4 font-medium text-gray ">
         <div className="flex items-center space-x-3">
