@@ -10,7 +10,7 @@ const PostComponents = {
         <img
           className="mt-10 hidden "
           alt={value.alt || " "}
-          src={urlFor(value)}
+          src={urlFor(value).width(320).height(240).fit('max').auto('format')}
         />
       );
     },
@@ -26,7 +26,6 @@ const PostComponents = {
 };
 
 const TopArticle = ({ post }) => {
-  console.log(post[0].slug);
 
   const { authorImage, username, title, mainImage, slug, body } = post[0];
   const router = useRouter();

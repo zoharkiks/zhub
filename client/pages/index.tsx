@@ -40,18 +40,12 @@ export async function getStaticProps ({ preview = false }) {
     body
   }
   `
-  // const categoryQuery = groq`*[_type == "category"] order(publishedAt desc)
-  // {
-  //   categories[]
 
-  // }  `
   
   const posts = await client.fetch(postQuery)
-  // const categories = await client.fetch(categoryQuery)
   return {
     props: {
       posts,
-      // categories
     },
   };
 }

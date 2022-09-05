@@ -6,7 +6,6 @@ import Router, { useRouter } from "next/router";
 import { urlFor } from "../lib/sanity";
 
 const ArticleCard = ({ post }) => {
-  console.log(post);
   
   const router = useRouter();
   return (
