@@ -4,9 +4,9 @@ import { images } from '../constants'
 
 const Footer = () => {
   return (
-    <div className='px-14 grid grid-cols-2 bg-darkGray full-bleed py-6  mt-10 rounded-t-xl '>
+    <div className=' grid grid-cols-3 items-center  place-items-center bg-darkGray full-bleed py-4  mt-10 rounded-t-xl '>
 
-<div className="  text-base md:text-lg text-white flex flex-col justify-center ">
+<div className="  text-md md:text text-white flex flex-col  ">
         <ul className=" space-y-4 flex flex-col md:flex-row md:space-y-0 md:space-x-4">
           <Link href="/">Home</Link>
           <a
@@ -19,9 +19,11 @@ const Footer = () => {
         </ul>
       </div>
 
-      <div className="flex justify-end ">
-        <img className="h-14" src={images.logo.src} alt="logo" />
+      <div className="flex">
+        <img className="h-10 md:h-14" src={images.logo.src} alt="logo" />
       </div>
+
+      <span className='text-white text-md md:text-xs w-full'>©2022 All Rights Reserved</span>
     </div>
   )
 }
