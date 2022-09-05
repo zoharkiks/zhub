@@ -33,8 +33,8 @@ export async function getStaticProps ({ preview = false }) {
     "username": author->username,
     "categories":categories[]->{_id,title},
     title,
-    "mainImage": image.asset,
-   "authorImage":author->avatar.asset,
+    "mainImage": image.asset->url,
+   "authorImage":author->avatar.asset->url,
     publishedAt,
     "slug":slug.current,
     body

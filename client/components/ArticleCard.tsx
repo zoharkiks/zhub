@@ -6,12 +6,14 @@ import Router, { useRouter } from "next/router";
 import { urlFor } from "../lib/sanity";
 
 const ArticleCard = ({ post }) => {
+  console.log(post);
+  
   const router = useRouter();
   return (
     <div className="flex w-[85%] flex-col  space-y-6 font-jakarta  text-white ">
       <div
         style={{
-          backgroundImage: `url(${urlFor(post.mainImage)})`,
+          backgroundImage: `url(${post.mainImage})`,
         }}
         className="flex h-[30rem]  flex-col items-center justify-between rounded-2xl bg-cover bg-no-repeat p-4"
       >
@@ -23,7 +25,7 @@ const ArticleCard = ({ post }) => {
         <div className="flex w-max items-center justify-between space-x-3 rounded-full bg-white px-4  py-2 drop-shadow-2xl">
           <img
             className="h-12 w-12 rounded-full object-cover object-top  "
-            src={urlFor(post?.authorImage)}
+            src={post?.authorImage}
             alt={post.username + "avatar"}
           />
           <span className="font-medium text-gray">{post.username}</span>

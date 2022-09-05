@@ -65,7 +65,7 @@ const Details = ({ post }) => {
             <div className="flex w-max items-center justify-between space-x-3 rounded-full bg-white px-4 py-2 drop-shadow-2xl">
               <img
                 className="h-10 w-10 rounded-full object-cover object-top  "
-                src={urlFor(post?.authorImage)}
+                src={post?.authorImage}
                 alt="profile"
               />
               <span className="text-sm font-medium text-gray">
@@ -109,7 +109,7 @@ const Details = ({ post }) => {
           <div className="flex  w-full justify-center  lg:justify-start">
             <img
               className=" h-[24rem] w-max rounded-xl object-contain"
-              src={urlFor(post?.mainImage)}
+              src={post?.mainImage}
               alt=""
             />
           </div>
@@ -127,10 +127,11 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]
   title,
   "username": author->username,
   "categories":categories[]->{_id,title},
-  "mainImage": image.asset,
-  "authorImage":author->avatar.asset,
+  "mainImage": image.asset->url,
+  "authorImage":author->avatar.asset->url,
   publishedAt,
-  body
+  body,
+  "bodyImage":body->asset
 
 }
 `;

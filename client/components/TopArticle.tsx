@@ -34,16 +34,14 @@ const TopArticle = ({ post }) => {
   return (
     <div
       style={{
-        backgroundImage: `linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(0,0,0,1) 0%, rgba(36,96,247,0.6449930313922444) 100%) , url(${urlFor(
-          mainImage
-        )})`,
+        backgroundImage: `linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(0,0,0,1) 0%, rgba(36,96,247,0.6449930313922444) 100%) , url(${mainImage})`,
       }}
       className="mt-6 flex w-full flex-col items-center  space-y-8 rounded-2xl bg-white bg-cover bg-center  py-20 px-10 text-center font-jakarta md:bg-top"
     >
       <div className="flex w-max items-center justify-between space-x-3 rounded-full bg-white px-4  py-2 drop-shadow-lg">
         <img
           className="h-12 w-12 rounded-full object-cover object-top "
-          src={urlFor(authorImage)}
+          src={authorImage}
           alt=""
         />
         <span className="font-medium text-gray">{username}</span>
