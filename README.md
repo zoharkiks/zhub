@@ -7,7 +7,7 @@
 
 
 <p align="center">
-<img src="https://i.ibb.co/SNCfswB/Cocktail-Curators.png" alt="Cocktail-Curators"  height="75%" width="75%" >
+<img src="https://i.ibb.co/m6YDzHR/ZHub.png" alt="ZHub"  height="75%" width="75%" >
 </p>
 <br>
 
