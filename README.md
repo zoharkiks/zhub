@@ -1,8 +1,7 @@
 <h1 align="center">ZHub</h3> 
 <br>
 
-<p> <a href="https://zhub.vercel.app/"><h3 align="center" >Live Site</h3></a>
-<br>
+<p align="center"><a href="https://zhub.vercel.app/">Live Site</a></p>
 
 
 
